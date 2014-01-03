@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record model="ir.ui.view" id="account.check_portfolio_form_view">
+            <field name="name">account.check.portfolio.wizard.form</field>
+            <field name="model">account.check.portfolio</field>
+            <field name="arch" type="xml">
+                <form string="Agregar a Cartera" col="2" version="7.0">
+                    <group >
+                        <field name="partner_id"/>
+                    </group>
+                    <footer>    
+                        <button type="special" special="cancel" string="Cancel" icon="gtk-cancel"/>
+                        or
+                        <button type="object" name="action_deposit" string="Agregar a Cartera" icon="gtk-ok"/>
+                    </footer>     
+                </form>
+            </field>
+        </record>
+
+        <act_window
+            name="Agregar a Cartera"
+            res_model="account.check.portfolio"
+            src_model="account.third.check"
+            view_mode="form"
+            target="new"
+            key2="client_action_multi"
+            id="action_check_portfolio"/>
+        
+    </data>
+</openerp>
